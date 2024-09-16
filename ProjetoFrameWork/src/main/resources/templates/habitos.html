@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hábitos Diários</title>
+    <link rel="stylesheet" href="css/habitos.css">
+</head>
+<body>
+<h1>Hábitos Diários</h1>
+<div class="date" id="currentDate"></div>
+<div class="habit-list">
+
+<form action="/habito/save" method="post">
+    <input type="hidden" id="currentDateInput" name="data">
+    <table>
+        <thead>
+        <tr>
+            <th>Descrição</th>
+            <th>Concluída</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Tomar 2 litros de água</td>
+            <td class="checkbox"><input type="checkbox" id="agua" name="agua"></td>
+        </tr>
+        <tr>
+            <td>Fazer exercícios</td>
+            <td class="checkbox"><input type="checkbox" id="exercicio" name="exercicio"></td>
+        </tr>
+        <tr>
+            <td>Ler por 1 hora</td>
+            <td class="checkbox"><input type="checkbox" id="ler" name="ler"></td>
+        </tr>
+        <tr>
+            <td>Comer vegetais</td>
+            <td class="checkbox"><input type="checkbox" id="vegetais" name="vegetais"></td>
+        </tr>
+        <tr>
+            <td>Estudar por 1 hora</td>
+            <td class="checkbox"><input type="checkbox" id="estudas" name="estudar"></td>
+        </tr>
+        <tr>
+            <td>Dormir por 8 horas</td>
+            <td class="checkbox"><input type="checkbox" id="dormir" name="dormir"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <button type="submit" class="btn">Salvar Hábitos</button>
+    <a href="/todasTarefas" class="btn btn-secondary">Voltar</a>
+    <a href="/historico" class="btn btn-secondary">Historico de Habitos</a>
+</form>
+</div>
+
+<script>
+
+
+
+
+    // Função para mostrar a data de hoje
+    function displayCurrentDate() {
+        const dateElement = document.getElementById('currentDate');
+        const today = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const currentDate = today.toLocaleDateString('pt-BR', options);
+        dateElement.innerText = `Hoje é ${currentDate}`;
+        document.getElementById('currentDateInput').value = currentDate;
+    }
+
+    // Chama a função ao carregar a página
+    displayCurrentDate();
+</script>
+</body>
+</html>

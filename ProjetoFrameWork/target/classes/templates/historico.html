@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Hábitos</title>
+    <link rel="stylesheet" href="css/historico.css">
+</head>
+<body>
+<h1>Histórico de Hábitos Diários</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Data</th>
+        <th>Tomar 2 litros de água</th>
+        <th>Fazer exercícios</th>
+        <th>Ler por 1 hora</th>
+        <th>Comer vegetais</th>
+        <th>Estudar por 1 hora</th>
+        <th>Dormir por 8 horas</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Aqui começará a renderização dos dados históricos -->
+    <tr th:each="habito : ${historico}">
+        <td th:text="${habito.data}"></td>
+        <td th:text="${habito.agua != null ? (habito.agua ? 'Feito' : 'Não feito') : 'Não feito'}"></td>
+        <td th:text="${habito.exercicio != null ? (habito.exercicio ? 'Feito' : 'Não feito') : 'Não feito'}"></td>
+        <td th:text="${habito.ler != null ? (habito.ler ? 'Feito' : 'Não feito') : 'Não feito'}"></td>
+        <td th:text="${habito.vegetais != null ? (habito.vegetais ? 'Feito' : 'Não feito') : 'Não feito'}"></td>
+        <td th:text="${habito.estudar != null ? (habito.estudar ? 'Feito' : 'Não feito') : 'Não feito'}"></td>
+        <td th:text="${habito.dormir != null ? (habito.dormir ? 'Feito' : 'Não feito') : 'Não feito'}"></td>
+    </tr>
+
+    </tbody>
+</table>
+<a href="/todasTarefas" class="btn btn-secondary">Voltar</a>
+
+
+
+
+
+
+</body>
+</html>
