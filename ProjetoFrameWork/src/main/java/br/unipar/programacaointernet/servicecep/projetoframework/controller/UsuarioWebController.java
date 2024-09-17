@@ -2,6 +2,7 @@ package br.unipar.programacaointernet.servicecep.projetoframework.controller;
 
 import br.unipar.programacaointernet.servicecep.projetoframework.model.Usuario;
 import br.unipar.programacaointernet.servicecep.projetoframework.service.UsuarioService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,9 +41,11 @@ public class UsuarioWebController {
     }
 
     @PostMapping("/login")
-    public String login(@RequestParam String nome, @RequestParam String senha, Model model) {
+    public String login(@RequestParam String nome, @RequestParam String senha, HttpSession session, Model model) {
         Optional<Usuario> usuario = usuarioService.validateUser(nome, senha);
         if (usuario.isPresent()) {
+            // Armazenar o ID do usuário na sessão
+            session.setAttribute("usuarioId", usuario.get().getId());
             return "redirect:/todasTarefas"; // Redireciona para /todasTarefas após o login
         } else {
             model.addAttribute("error", "Nome ou senha inválidos");

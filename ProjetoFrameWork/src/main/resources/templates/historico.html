@@ -22,7 +22,6 @@
     </tr>
     </thead>
     <tbody>
-    <!-- Aqui começará a renderização dos dados históricos -->
     <tr th:each="habito : ${historico}">
         <td th:text="${habito.data}"></td>
         <td th:text="${habito.agua != null ? (habito.agua ? 'Feito' : 'Não feito') : 'Não feito'}"></td>

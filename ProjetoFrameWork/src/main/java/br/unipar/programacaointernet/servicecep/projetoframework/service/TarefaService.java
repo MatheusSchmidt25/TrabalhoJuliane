@@ -31,4 +31,8 @@ public class TarefaService {
     public void deleteTarefa(Integer id) {
         tarefaRepository.deleteById(id);
     }
+
+    public List<Tarefa> getAllTarefaPorUsuarioId(Integer usuarioId) {
+        return this.tarefaRepository.findTarefasByUsuarioId(usuarioId);
+    }
 }
