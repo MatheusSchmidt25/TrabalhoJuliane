@@ -27,14 +27,11 @@ public class TarefaWebController {
     @GetMapping(path = "/todasTarefas")
     public String getAllTarefa(Model model, HttpSession session) {
         Integer usuarioId = (Integer) session.getAttribute("usuarioId");
-        System.out.println("ID do usuário logado: " + usuarioId); // Adicione esta linha
-
         if (usuarioId != null) {
             List<Tarefa> tarefas = tarefaService.getAllTarefaPorUsuarioId(usuarioId);
-            System.out.println("Número de tarefas encontradas: " + tarefas.size()); // Adicione esta linha
             model.addAttribute("todasTarefas", tarefas);
         } else {
-            model.addAttribute("todasTarefas", List.of()); // Ou outra lógica para quando não houver ID
+            model.addAttribute("todasTarefas", List.of());
         }
 
         return "todasTarefas";
@@ -58,9 +55,7 @@ public class TarefaWebController {
     }
 
     private Integer getUsuarioLogadoId() {
-        // Implementar a lógica para obter o ID do usuário logado
-        // Pode ser algo como: return SecurityContextHolder.getContext().getAuthentication().getPrincipal().getId();
-        return 1; // Exemplo estático para testes
+        return 1;
     }
 
 

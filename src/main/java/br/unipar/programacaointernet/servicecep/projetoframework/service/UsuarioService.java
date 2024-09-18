@@ -25,18 +25,16 @@ public class UsuarioService {
     }
 
     public Optional<Usuario> validateUser(String nome, String senha) {
-        // Procura o usuário pelo nome (login)
         Optional<Usuario> usuarioOptional = usuarioRepository.findByNome(nome);
 
         if (usuarioOptional.isPresent()) {
             Usuario usuario = usuarioOptional.get();
-            // Compara a senha fornecida com a senha armazenada
             if (senha.equals(usuario.getSenha())) {
-                return Optional.of(usuario); // Senha correta, retorna o usuário
+                return Optional.of(usuario);
             }
         }
 
-        return Optional.empty(); // Usuário não encontrado ou senha incorreta
+        return Optional.empty();
     }
 
     public Usuario getUsuarioById(Integer id) {

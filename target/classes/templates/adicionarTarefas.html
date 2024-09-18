@@ -1,38 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar Tarefa</title>
-    <!-- Link para o CSS do Bootstrap -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/adicionarTarefas.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/adicionarTarefas.css"> <!-- Se necessário -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
 </head>
-<body>
-<div class="container mt-5">
-    <h1 class="text-center text-success">Adicionar Tarefa</h1>
+<body class="bg-green-50">
+<div class="container mx-auto mt-10 bg-white rounded-lg shadow-md p-6 max-w-md">
+    <h1 class="text-center text-green-700 text-3xl font-bold mb-6">Adicionar Tarefa</h1>
     <form method="post" th:action="@{/tarefa/save}">
-        <div class="form-group">
-            <label for="descricao" class="text-success">Descrição:</label>
-            <input type="text" id="descricao" name="descricao" class="form-control" required>
+        <div class="mb-4">
+            <label for="descricao" class="block text-green-700">Descrição:</label>
+            <input type="text" id="descricao" name="descricao" class="mt-1 block w-full p-2 border border-gray-300 rounded" required>
         </div>
-        <div class="form-group">
-            <label for="data_inicio" class="text-success">Data de Início:</label>
-            <input type="date" id="data_inicio" name="data_inicio" class="form-control" required>
+        <div class="mb-4">
+            <label for="data_inicio" class="block text-green-700">Data de Início:</label>
+            <input type="date" id="data_inicio" name="data_inicio" class="mt-1 block w-full p-2 border border-gray-300 rounded" required>
         </div>
-        <div class="form-group">
-            <label for="data_limite" class="text-success">Data Limite:</label>
-            <input type="date" id="data_limite" name="data_limite" class="form-control" required>
+        <div class="mb-4">
+            <label for="data_limite" class="block text-green-700">Data Limite:</label>
+            <input type="date" id="data_limite" name="data_limite" class="mt-1 block w-full p-2 border border-gray-300 rounded" required>
         </div>
-        <div class="form-group text-center">
-            <button type="submit" class="btn btn-success">Adicionar Tarefa</button>
-            <button type="button" class="btn btn-secondary" onclick="window.location.href='/todasTarefas';">Voltar</button>
+        <div class="text-center">
+            <button type="submit" class="bg-green-700 text-white font-bold py-2 px-4 rounded hover:bg-green-600 transition duration-300">Adicionar Tarefa</button>
+            <button type="button" class="bg-green-700 text-white font-bold py-2 px-4 rounded hover:bg-green-600 transition duration-300 ml-4" onclick="window.location.href='/todasTarefas';">Voltar</button>
         </div>
     </form>
 </div>
-<!-- Scripts do Bootstrap -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

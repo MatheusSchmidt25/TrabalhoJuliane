@@ -8,50 +8,50 @@ body, h1, table, button, a {
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #e8f5e9; /* Verde muito claro */
+    background-color: #e8f5e9;
     color: #333;
     padding: 20px;
 }
 
 h1 {
     text-align: center;
-    color: #388e3c; /* Verde escuro */
+    color: #388e3c;
     margin-bottom: 20px;
 }
 
-/* Estilo da tabela */
+
 table {
     width: 100%;
     border-collapse: collapse;
-    background-color: #ffffff; /* Branco */
+    background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 thead th {
-    background-color: #81c784; /* Verde claro */
+    background-color: #81c784;
     color: #fff;
-    padding: 15px; /* Aumentando padding */
+    padding: 15px;
     text-align: left;
-    font-size: 1.1em; /* Aumentando tamanho da fonte */
+    font-size: 1.1em;
 }
 
 tbody td {
-    padding: 15px; /* Aumentando padding */
+    padding: 15px;
     border-bottom: 1px solid #ddd;
-    font-size: 1em; /* Aumentando tamanho da fonte */
+    font-size: 1em;
 }
 
 tbody tr:nth-child(even) {
-    background-color: #f1f8e9; /* Verde muito claro */
+    background-color: #f1f8e9;
 }
 
 tbody tr:hover {
-    background-color: #c8e6c9; /* Verde claro em hover */
+    background-color: #c8e6c9;
 }
 
 .stylish-button {
-    background-color: #388e3c; /* Verde escuro */
+    background-color: #388e3c;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -62,21 +62,21 @@ tbody tr:hover {
 }
 
 .stylish-button:hover {
-    background-color: #2c6c2f; /* Verde mais escuro */
+    background-color: #2c6c2f;
 }
 
 .button-container {
     text-align: center;
-    margin-top: 40px; /* Aumentando margem superior */
+    margin-top: 40px;
 }
 
 .btn, .btn-secondary {
     display: inline-block;
-    padding: 15px 30px; /* Aumentando tamanho dos botões */
+    padding: 15px 30px;
     margin: 10px 5px;
     border: none;
     border-radius: 4px;
-    font-size: 1.1em; /* Aumentando tamanho da fonte */
+    font-size: 1.1em;
     font-weight: 700;
     cursor: pointer;
     text-align: center;
@@ -84,19 +84,19 @@ tbody tr:hover {
 }
 
 .btn {
-    background-color: #388e3c; /* Verde escuro */
+    background-color: #388e3c;
     color: #fff;
 }
 
 .btn:hover {
-    background-color: #2c6c2f; /* Verde mais escuro */
+    background-color: #2c6c2f;
 }
 
 .btn-secondary {
-    background-color: #388e3c; /* Verde pastel */
+    background-color: #388e3c;
     color: #fff;
 }
 
 .btn-secondary:hover {
-    background-color: #2c6c2f; /* Verde claro */
+    background-color: #2c6c2f;
 }

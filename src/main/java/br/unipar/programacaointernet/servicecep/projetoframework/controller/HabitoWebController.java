@@ -26,17 +26,14 @@ public class HabitoWebController {
     @GetMapping("/historico")
     public String getAllHistorico(Model model, HttpSession session) {
         Integer usuarioId = (Integer) session.getAttribute("usuarioId");
-        System.out.println("ID do usuário logado: " + usuarioId);
-
         if (usuarioId != null) {
-            List<Habito> habitos = habitoService.getAllHabitoPorUsuarioId(usuarioId); // Ou o método que busca os dados corretos para o histórico
-            System.out.println("Número de tarefas encontradas: " + habitos.size());
+            List<Habito> habitos = habitoService.getAllHabitoPorUsuarioId(usuarioId);
             model.addAttribute("historico", habitos);
         }else{
             model.addAttribute("historico", List.of());
         }
 
-        return "historico"; // Nome do arquivo HTML (historico.html) na pasta templates
+        return "historico";
     }
 
     @PostMapping(path = "/habito/save")
@@ -47,7 +44,7 @@ public class HabitoWebController {
             habito.setUsuario(usuario);
             habitoService.save(habito);
         }
-        return "redirect:/todasTarefas"; // Redireciona para a página de hábitos
+        return "redirect:/todasTarefas";
     }
 
     @GetMapping("/habitos")

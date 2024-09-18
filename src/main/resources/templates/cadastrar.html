@@ -32,6 +32,38 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="js/cadastro.js"></script>
+    <script>document.getElementById('registerForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const nome = document.getElementById('nome').value;
+        const email = document.getElementById('email').value;
+        const senha = document.getElementById('senha').value;
+
+        fetch('/api/usuarios', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                nome: nome,
+                email: email,
+                senha: senha,
+            }),
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.id) {
+                    alert('Cadastro bem-sucedido!');
+                    window.location.href = '/login';
+                } else {
+                    alert('Erro ao cadastrar: ' + (data.message || 'Erro desconhecido'));
+                }
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                alert('Erro na conexão com o servidor');
+            });
+    });
+    </script>
 </body>
 </html>
