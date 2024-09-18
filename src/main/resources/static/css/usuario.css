@@ -1,0 +1,29 @@
+/* Customizando as cores do Bootstrap para corresponder ao seu design */
+
+body {
+    background-color: #e8f5e9; /* Verde muito claro */
+}
+
+h1 {
+    color: #388e3c; /* Verde escuro */
+}
+
+.btn.custom-btn-primary {
+    background-color: #388e3c; /* Verde escuro */
+    border-color: #388e3c;
+}
+
+.btn.custom-btn-primary:hover {
+    background-color: #2c6c2f; /* Verde mais escuro */
+    border-color: #2c6c2f;
+}
+
+.btn.custom-btn-secondary {
+    background-color: #388e3c; /* Verde pastel */
+    border-color: #388e3c;
+}
+
+.btn.custom-btn-secondary:hover {
+    background-color: #2c6c2f; /* Verde claro */
+    border-color: #2c6c2f;
+}

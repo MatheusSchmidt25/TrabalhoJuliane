@@ -1,0 +1,46 @@
+/* Adicionando uma fonte do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Definindo a fonte padrão e a cor de fundo */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #e8f5e9; /* Verde muito claro */
+    color: #333;
+}
+
+/* Estilo do título */
+h1.text-green {
+    color: #388e3c; /* Verde escuro */
+}
+
+/* Estilo do formulário */
+.form-control {
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+/* Estilo dos botões */
+.btn-primary {
+    background-color: #388e3c; /* Verde escuro */
+    border-color: #388e3c; /* Verde escuro */
+}
+
+.btn-primary:hover {
+    background-color: #2c6c2f; /* Verde mais escuro */
+    border-color: #2c6c2f; /* Verde mais escuro */
+}
+
+.btn-secondary {
+    background-color: #388e3c; /* Verde claro */
+    border-color: #388e3c; /* Verde claro */
+}
+
+.btn-secondary:hover {
+    background-color: #2c6c2f; /* Verde mais claro */
+    border-color: #2c6c2f; /* Verde mais claro */
+}
+
+/* Estilo da área do formulário */
+.bg-white {
+    background-color: #ffffff !important; /* Branco */
+}
