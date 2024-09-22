@@ -37,5 +37,16 @@
     </table>
     <a href="/todasTarefas" class="mt-8 inline-block bg-green-700 text-white font-bold py-3 px-6 rounded hover:bg-green-600 transition duration-300">Voltar</a>
 </div>
+<script>
+    function displayCurrentDate() {
+        const dateElement = document.getElementById('currentDate');
+        const today = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const currentDate = today.toLocaleDateString('pt-BR', options);
+        dateElement.innerText = ` ${currentDate}`;
+        document.getElementById('currentDateInput').value = currentDate;
+    }
+    displayCurrentDate();
+</script>
 </body>
 </html>

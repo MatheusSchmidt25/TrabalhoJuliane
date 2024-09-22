@@ -26,7 +26,7 @@
         <td th:text="${tarefa.data_limite}"></td>
         <td th:text="${tarefa.usuario.nome}"></td>
         <td>
-            <form th:action="@{/tarefa/delete/{id}(id=${tarefa.id})}" method="post">
+            <form th:action="@{/tarefa/delete/{id}(id=${tarefa.id})}" method="post" onsubmit="return confirm('Deseja realmente excluir esta tarefa?');">
                 <input type="hidden" name="_method" value="delete">
                 <button class="stylish-button" type="submit">Feito</button>
             </form>
@@ -39,5 +39,6 @@
     <a href="/habitos" class="btn">Hábitos</a>
     <a href="/login" class="btn btn-secondary">Sair</a>
 </div>
+
 </body>
 </html>

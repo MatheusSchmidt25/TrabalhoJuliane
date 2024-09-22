@@ -62,7 +62,7 @@
             const today = new Date();
             const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
             const currentDate = today.toLocaleDateString('pt-BR', options);
-            dateElement.innerText = `Hoje é ${currentDate}`;
+            dateElement.innerText = ` ${currentDate}`;
             document.getElementById('currentDateInput').value = currentDate;
         }
         displayCurrentDate();
